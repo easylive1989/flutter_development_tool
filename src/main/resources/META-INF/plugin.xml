@@ -5,14 +5,26 @@
     <vendor>easylive1989</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.java</depends>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.easylive1989.flutterdevelopmenttool.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.easylive1989.flutterdevelopmenttool.services.MyProjectService"/>
-    </extensions>
+<!--    <extensions defaultExtensionNs="com.intellij">-->
+<!--        <applicationService serviceImplementation="com.github.easylive1989.flutterdevelopmenttool.services.MyApplicationService"/>-->
+<!--        <projectService serviceImplementation="com.github.easylive1989.flutterdevelopmenttool.services.MyProjectService"/>-->
+<!--    </extensions>-->
 
-    <applicationListeners>
-        <listener class="com.github.easylive1989.flutterdevelopmenttool.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
+<!--    <applicationListeners>-->
+<!--        <listener class="com.github.easylive1989.flutterdevelopmenttool.listeners.MyProjectManagerListener"-->
+<!--                  topic="com.intellij.openapi.project.ProjectManagerListener"/>-->
+<!--    </applicationListeners>-->
+    <actions>
+        <action id="com.github.easylive1989.flutterdevelopmenttool.actions.PopupDialogAction"
+                class="com.github.easylive1989.flutterdevelopmenttool.actions.PopupDialogAction"
+                text="Pop Dialog Action" description="SDK action example">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+            <override-text place="MainMenu" text="Pop Dialog Action"/>
+            <keyboard-shortcut first-keystroke="control alt A" second-keystroke="C" keymap="$default"/>
+            <mouse-shortcut keystroke="control button3 doubleClick" keymap="$default"/>
+        </action>
+    </actions>
 </idea-plugin>
