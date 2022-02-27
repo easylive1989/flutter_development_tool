@@ -7,6 +7,8 @@
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.lang</depends>
     <depends>com.intellij.modules.java</depends>
+    <depends>io.flutter</depends>
+    <depends>Dart</depends>
 
 <!--    <extensions defaultExtensionNs="com.intellij">-->
 <!--        <applicationService serviceImplementation="com.github.easylive1989.flutterdevelopmenttool.services.MyApplicationService"/>-->
@@ -19,7 +21,7 @@
 <!--    </applicationListeners>-->
     <actions>
         <action id="com.github.easylive1989.flutterdevelopmenttool.actions.PopupDialogAction"
-                class="com.github.easylive1989.flutterdevelopmenttool.actions.PopupDialogAction"
+                class="com.github.easylive1989.flutterdevelopmenttool.PopupDialogAction"
                 text="Pop Dialog Action" description="SDK action example">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
             <override-text place="MainMenu" text="Pop Dialog Action"/>

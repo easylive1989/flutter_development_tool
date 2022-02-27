@@ -7,6 +7,7 @@ import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.psi.*;
+import com.jetbrains.lang.dart.psi.DartClassDefinition;
 import com.intellij.psi.search.searches.MethodReferencesSearch;
 import com.intellij.psi.util.PsiTreeUtil;
 import com.intellij.util.Query;
@@ -24,14 +25,11 @@ public class PopupDialogAction extends AnAction {
         var message = "";
         if (element != null) {
             message += java.lang.String.format("\nSelected Element: %s", element);
-            PsiMethod containingMethod = PsiTreeUtil.getParentOfType(element);
+            message += String.format("\nSelected Language: %s", element.getLanguage());
+            DartClassDefinition containingMethod = PsiTreeUtil.getParentOfType(element, DartClassDefinition.class);
             if (containingMethod != null) {
-                Query<PsiReference> result = MethodReferencesSearch.search(containingMethod);
-                message += String.format("\nSelected Method: %s", containingMethod.getFirstChild().getLanguage());
-                PsiClass containingClass = containingMethod.getContainingClass();
-                if (containingClass != null) {
-                    message += java.lang.String.format("\nSelected Class: %s", containingClass);
-                }
+//                Query<PsiReference> result = MethodReferencesSearch.search(containingMethod);
+                message += String.format("\nSelected Method: %s", containingMethod.getFirstChild());
             }
         }
 
