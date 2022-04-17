@@ -5,8 +5,9 @@
     <vendor>easylive1989</vendor>
 
     <depends>com.intellij.modules.platform</depends>
-    <depends>com.intellij.modules.lang</depends>
-    <depends>com.intellij.modules.java</depends>
+    <depends>org.jetbrains.plugins.yaml</depends>
+<!--    <depends>com.intellij.modules.lang</depends>-->
+<!--    <depends>com.intellij.modules.java</depends>-->
     <depends>io.flutter</depends>
     <depends>Dart</depends>
 
